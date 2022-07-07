@@ -2,10 +2,12 @@ let contacts = [
   {
     name: "seth",
     address: "2nd st",
+    id: "seth2nd st",
   },
   {
     name: "steve",
     address: "5th ave",
+    id: "steve5th ave",
   },
 ];
 
@@ -19,7 +21,7 @@ function addContact(name, address) {
 }
 
 function deleteContact(id) {
-  contacts.filter(function (contact) {
+  contacts = contacts.filter(function (contact) {
     if (contact.id !== id) {
       return true;
     }
@@ -48,5 +50,6 @@ function displayContacts(contacts) {
 
   document.getElementById("contacts-container").appendChild(contactListElm);
 }
-
+addContact("kj", "lkj");
+deleteContact("seth2nd st");
 displayContacts(contacts);
