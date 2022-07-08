@@ -7,7 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <form id="new-contact-form"></form>
+    <form id="new-contact-form" method="post"></form>
+    <label for="first-name">Enter First Name</label>
+    <input type="text" id="first-name" name="first-name" />
+    <label for="address">Enter Address</label>
+    <input type="text" id="address" />
+    <button type="button" onclick="addContact()">Add Contact</button>
+
     <div id="contacts-container"></div>
     <script src="./index.js"></script>
   </body>
