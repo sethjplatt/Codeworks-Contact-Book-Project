@@ -13,8 +13,8 @@ let contacts = [
 
 function addContact(name, address) {
   let newContact = {
-    name: name,
-    address: address,
+    name: document.getElementById("first-name").value,
+    address: document.getElementById("address").value,
     id: name + address,
   };
   contacts.push(newContact);
@@ -50,6 +50,5 @@ function displayContacts(contacts) {
 
   document.getElementById("contacts-container").appendChild(contactListElm);
 }
-addContact("kj", "lkj");
-deleteContact("seth2nd st");
+
 displayContacts(contacts);
