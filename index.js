@@ -18,6 +18,7 @@ function addContact(name, address) {
     id: name + address,
   };
   contacts.push(newContact);
+  displayContacts(contacts);
 }
 
 function deleteContact(id) {
@@ -50,5 +51,3 @@ function displayContacts(contacts) {
 
   document.getElementById("contacts-container").appendChild(contactListElm);
 }
-
-displayContacts(contacts);
