@@ -45,6 +45,10 @@ function displayContact(contacts) {
   wrapper.appendChild(deleteButton);
   contactListElm.appendChild(wrapper);
 
+  deleteButton.addEventListener("click", function () {
+    contactListElm.remove();
+  });
+
   return document
     .getElementById("contacts-container")
     .appendChild(contactListElm);
