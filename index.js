@@ -35,11 +35,14 @@ function displayContact(contacts) {
   let wrapper = document.createElement("li");
   let name = document.createElement("span");
   let address = document.createElement("span");
+  let deleteButton = document.createElement("button");
 
   name.innerHTML = contacts[contacts.length - 1].name;
   address.innerHTML = contacts[contacts.length - 1].address;
+  deleteButton.innerHTML = "Delete";
   wrapper.appendChild(name);
   wrapper.appendChild(address);
+  wrapper.appendChild(deleteButton);
   contactListElm.appendChild(wrapper);
 
   return document
