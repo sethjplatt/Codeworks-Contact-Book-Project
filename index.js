@@ -18,38 +18,50 @@ function addContact(name, address) {
     id: name + address,
   };
   contacts.push(newContact);
+  clear();
   displayContact(contacts);
 }
 
-function deleteContact(id) {
-  contacts = contacts.filter(function (contact) {
-    if (contact.id !== id) {
-      return true;
-    }
-    return false;
-  });
+function clear() {
+  document.getElementById("contacts-container").innerHTML = "";
 }
 
+let searchInput = document.getElementById("search-bar");
+
+searchInput.addEventListener("input", function (e) {
+  let currentSearch = e.target.value;
+  let filteredContacts = contacts.filter((contact) => {
+    return contact.name.includes(currentSearch);
+  });
+  clear();
+  displayContact(filteredContacts);
+});
+
 function displayContact(contacts) {
-  let contactListElm = document.createElement("ul");
-  let wrapper = document.createElement("li");
-  let name = document.createElement("span");
-  let address = document.createElement("span");
-  let deleteButton = document.createElement("button");
+  let contactsElms = document.createElement("ul");
+  let contactListElm = contacts.map(function (contact) {
+    let wrapper = document.createElement("li");
+    let name = document.createElement("span");
+    let address = document.createElement("span");
+    let deleteButton = document.createElement("button");
 
-  name.innerHTML = contacts[contacts.length - 1].name;
-  address.innerHTML = contacts[contacts.length - 1].address;
-  deleteButton.innerHTML = "Delete";
-  wrapper.appendChild(name);
-  wrapper.appendChild(address);
-  wrapper.appendChild(deleteButton);
-  contactListElm.appendChild(wrapper);
+    name.innerHTML = contact.name;
+    address.innerHTML = contact.address;
+    deleteButton.innerHTML = "Delete";
+    wrapper.appendChild(name);
+    wrapper.appendChild(address);
+    wrapper.appendChild(deleteButton);
+    contactsElms.appendChild(wrapper);
 
-  deleteButton.addEventListener("click", function () {
-    contactListElm.remove();
+    deleteButton.addEventListener("click", function () {
+      wrapper.remove();
+      contacts.splice(contacts.indexOf(this), 1);
+    });
+
+    return wrapper;
   });
 
   return document
     .getElementById("contacts-container")
-    .appendChild(contactListElm);
+    .appendChild(contactsElms);
 }
