@@ -32,13 +32,13 @@ function clear() {
 let searchInput = document.getElementById("search-bar");
 
 searchInput.addEventListener("input", function (e) {
-  let currentSearch = e.target.value;
+  let currentSearch = e.target.value.toLowerCase();
   let filteredContacts = contacts.filter((contact) => {
     return (
-      contact.firstName.includes(currentSearch) ||
-      contact.lastName.includes(currentSearch) ||
-      contact.phoneNumber.includes(currentSearch) ||
-      contact.address.includes(currentSearch)
+      contact.firstName.toLowerCase().includes(currentSearch) ||
+      contact.lastName.toLowerCase().includes(currentSearch) ||
+      contact.phoneNumber.toLowerCase().includes(currentSearch) ||
+      contact.address.toLowerCase().includes(currentSearch)
     );
   });
   clear();
