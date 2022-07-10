@@ -1,17 +1,4 @@
-let contacts = [
-  {
-    firstName: "Seth",
-    lastName: "Platt",
-    phoneNumber: "4258306261",
-    address: "600 S 1st St",
-  },
-  {
-    firstName: "Paul",
-    lastName: "Jones",
-    phoneNumber: "2065415602",
-    address: "10 Lake Rd",
-  },
-];
+let contacts = [];
 
 function addContact(name, address) {
   let newContact = {
