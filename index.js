@@ -55,7 +55,8 @@ function displayContact(contacts) {
 
     deleteButton.addEventListener("click", function () {
       wrapper.remove();
-      contacts.splice(contacts.indexOf(this), 1);
+      let index = contacts.indexOf(this);
+      contacts.splice(index, 1);
     });
 
     return wrapper;
