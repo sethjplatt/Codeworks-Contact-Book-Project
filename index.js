@@ -1,15 +1,32 @@
-let contacts = [];
+let contacts = [
+  {
+    firstName: "Seth",
+    lastName: "Platt",
+    phoneNumber: "4258306261",
+    address: "600 S 1st St",
+  },
+  {
+    firstName: "Paul",
+    lastName: "Jones",
+    phoneNumber: "2065415602",
+    address: "10 Lake Rd",
+  },
+];
 
-function addContact(name, address) {
+count = 0;
+
+function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
     firstName: document.getElementById("first-name").value,
     lastName: document.getElementById("last-name").value,
     phoneNumber: document.getElementById("phone-number").value,
     address: document.getElementById("address").value,
+    id: count++,
   };
   contacts.push(newContact);
   clear();
   displayContacts(contacts);
+  console.log(contacts);
 }
 
 function clear() {
@@ -57,8 +74,7 @@ function displayContacts(contacts) {
 
     deleteButton.addEventListener("click", function () {
       wrapper.remove();
-      let index = contacts.indexOf(this);
-      contacts.splice(index, 1);
+      deleteContact();
     });
 
     return wrapper;
@@ -67,4 +83,13 @@ function displayContacts(contacts) {
   return document
     .getElementById("contacts-container")
     .appendChild(contactsElms);
+}
+
+function deleteContact(id) {
+  contacts = contacts.filter(function (contact) {
+    if (contact.id !== id) {
+      return true;
+    }
+    return false;
+  });
 }
