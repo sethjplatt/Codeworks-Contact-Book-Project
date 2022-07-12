@@ -4,21 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Book</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <button type="search-bar">Search</button>
+    <h1 id="title">Contact Book</h1>
+    <label type="search-bar" id="search-label">Search Contacts:</label>
     <input type="text" id="search-bar" name="search-bar" />
-    <form id="new-contact-form" method="post"></form>
-    <label for="first-name">Enter First Name</label>
-    <input type="text" id="first-name" />
-    <label for="last-name">Enter Last Name</label>
-    <input type="text" id="last-name" />
-    <label for="phone-number">Enter Phone Number</label>
-    <input type="text" id="phone-number" />
-    <label for="address">Enter Address</label>
-    <input type="text" id="address" />
-    <button type="button" onclick="addContact()">Add Contact</button>
+    <form id="new-contact-form" method="post">Add A New Contact</form>
+    <input
+      type="text"
+      id="first-name"
+      class="input-box"
+      placeholder="Enter First Name"
+    />
+    <input
+      type="text"
+      id="last-name"
+      class="input-box"
+      placeholder="Enter Last Name"
+    />
+    <input
+      type="text"
+      id="phone-number"
+      class="input-box"
+      placeholder="Enter Phone Number"
+    />
+    <input
+      type="text"
+      id="address"
+      class="input-box"
+      placeholder="Enter Address"
+    />
+    <button type="button" id="add-button" onclick="addContact()">
+      Add Contact
+    </button>
 
     <div id="contacts-container"></div>
     <script src="./index.js"></script>
