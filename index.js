@@ -4,20 +4,21 @@ let contacts = [
     lastName: "Platt",
     phoneNumber: "4258306261",
     address: "600 S 1st St",
+    id: "0",
   },
   {
     firstName: "Paul",
     lastName: "Jones",
     phoneNumber: "2065415602",
     address: "10 Lake Rd",
-    id: "10",
+    id: "1",
   },
   {
     firstName: "Dave",
     lastName: "Wall",
     phoneNumber: "5128830912",
     address: "98 West ave",
-    id: "11",
+    id: "2",
   },
 ];
 
@@ -77,7 +78,7 @@ function displayContacts(contacts) {
     address.innerHTML = contact.address;
     address.className = "address";
     deleteButton.innerHTML = "Delete";
-    deleteButton.className = "delete";
+    deleteButton.id = `${contact.id}`;
 
     wrapper.appendChild(firstName);
     wrapper.appendChild(lastName);
@@ -88,7 +89,8 @@ function displayContacts(contacts) {
 
     deleteButton.addEventListener("click", function () {
       wrapper.remove();
-      deleteContact();
+      console.log(deleteButton.id);
+      deleteContact(deleteButton.id);
     });
 
     return wrapper;
