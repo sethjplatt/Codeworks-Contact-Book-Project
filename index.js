@@ -10,10 +10,18 @@ let contacts = [
     lastName: "Jones",
     phoneNumber: "2065415602",
     address: "10 Lake Rd",
+    id: "10",
+  },
+  {
+    firstName: "Dave",
+    lastName: "Wall",
+    phoneNumber: "5128830912",
+    address: "98 West ave",
+    id: "11",
   },
 ];
 
-count = 0;
+count = 3;
 
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
@@ -59,11 +67,17 @@ function displayContacts(contacts) {
     let address = document.createElement("span");
     let deleteButton = document.createElement("button");
 
+    wrapper.className = "contact";
     firstName.innerHTML = contact.firstName;
+    firstName.className = "first-name";
     lastName.innerHTML = contact.lastName;
+    lastName.className = "last-name";
     phoneNumber.innerHTML = contact.phoneNumber;
+    phoneNumber.className = "phone-number";
     address.innerHTML = contact.address;
+    address.className = "address";
     deleteButton.innerHTML = "Delete";
+    deleteButton.className = "delete";
 
     wrapper.appendChild(firstName);
     wrapper.appendChild(lastName);
@@ -93,3 +107,5 @@ function deleteContact(id) {
     return false;
   });
 }
+
+displayContacts(contacts);

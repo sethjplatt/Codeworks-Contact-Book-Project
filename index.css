@@ -1,0 +1,86 @@
+body {
+  padding-left: 15px;
+  width: 500px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  color: rgb(119, 136, 153);
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgb(220, 220, 220);
+  height: 60px;
+  border: 3px solid rgb(119, 136, 153);
+}
+
+#new-contact-form {
+  margin-left: 50px;
+}
+
+#search-label {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+#search-bar {
+  height: 15px;
+  margin-bottom: 20px;
+  width: 173px;
+}
+
+#new-contact-form {
+  margin-left: 80px;
+  font-size: 25px;
+}
+
+.input-box {
+  display: block;
+  margin: 10px 80px;
+  height: 25px;
+  width: 300px;
+}
+
+#add-button {
+  display: block;
+  margin-left: 80px;
+}
+
+.first-name {
+  font-size: 30px;
+  margin: 20px 8px 10px 5px;
+  font-weight: bold;
+  color: rgb(119, 136, 153);
+}
+
+.last-name {
+  font-size: 30px;
+  margin: 20px 0px;
+  font-weight: bold;
+  color: rgb(119, 136, 153);
+}
+
+.phone-number {
+  display: block;
+  font-size: 15px;
+  margin: 10px 8px 5px 5px;
+  color: rgb(119, 136, 153);
+}
+
+.address {
+  font-size: 15px;
+  margin: 5px 20px 5px 5px;
+  color: rgb(119, 136, 153);
+}
+
+.delete {
+  margin: 5px 8px 5px 0px;
+}
+
+.contact {
+  background-color: rgb(220, 220, 220);
+  border: 3px solid rgb(119, 136, 153);
+  display: block;
+  margin-top: 10px;
+  width: 400px;
+}
