@@ -109,3 +109,6 @@ function deleteContact(id) {
 }
 
 displayContacts(contacts);
+
+$("h1").text("Contact Book");
+$("#search-label").text("Search Contacts");
