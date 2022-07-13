@@ -1,4 +1,14 @@
-//array that holds all contacts. acts as a searchable database we can later add contacts to and delete contacts from.
+/*------delete me-----------------------------
+ for global variables use 'var' to delcare them, also move them to the top of your program- its just better practice - teas
+ --------delete me----------------------------*/
+
+var count = 2;
+
+
+/*------------------------------------------------------------------------------------------------------------------
+array that holds all contacts.
+it acts as a searchable database we can later add contacts to and delete contacts from.
+-------------------------------------------------------------------------------------------------------------------*/
 let contacts = [
   {
     firstName: "Seth",
@@ -23,10 +33,17 @@ let contacts = [
   },
 ];
 
-//will use count to assign a unique id to each new contact, then reference that id upon deleting a contact
-let count = 3;
 
-//create a new contact object that will be pushed into our "database" contacts array. Values retrieved from HTML form.
+
+
+
+//will use count to assign a unique id to each new contact, then reference that id upon deleting a contact
+
+
+/*
+This function creates a contact object
+the object is then pushed into our "database" contacts array. Values retrieved from HTML form.
+*/
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
     firstName: document.getElementById("first-name").value,
@@ -121,10 +138,15 @@ function displayContacts(contacts) {
 function deleteContact(id) {
   contacts = contacts.filter(function (contact) {
     //if a contact object's id is not equal to the passed in id, keep it in the contacts array
+    console.log(id)
     if (contact.id !== id) {
       return true;
     }
     //if a contact object's id is equal to the passed in id, do not pass it into the updated contacts array
+    /*----------------delete me------------------
+    I added count-- here because your count would be off if you added another contact after deleting one 
+    ----------------delete me------------------*/
+    count--;
     return false;
   });
 }
