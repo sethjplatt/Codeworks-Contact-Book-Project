@@ -1,4 +1,10 @@
-//array that holds all contacts. acts as a searchable database we can later add contacts to and delete contacts from.
+var count = 2;
+
+/*
+Array that holds all contacts. 
+It acts as a searchable database we can later add contacts to and delete contacts from.
+*/
+
 let contacts = [
   {
     firstName: "Seth",
@@ -23,10 +29,10 @@ let contacts = [
   },
 ];
 
-//will use count to assign a unique id to each new contact, then reference that id upon deleting a contact
-let count = 3;
-
-//create a new contact object that will be pushed into our "database" contacts array. Values retrieved from HTML form.
+/*
+ This function creates a contact object
+ the object is then pushed into our "database" contacts array. Values retrieved from HTML form.
+ */
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
     firstName: document.getElementById("first-name").value,
@@ -121,12 +127,14 @@ function displayContacts(contacts) {
 function deleteContact(id) {
   contacts = contacts.filter(function (contact) {
     //if a contact object's id is not equal to the passed in id, keep it in the contacts array
+    console.log(id);
     if (contact.id !== id) {
       return true;
     }
-    //if a contact object's id is equal to the passed in id, do not pass it into the updated contacts array
+    //if a contact object's id is equal to the passed in id, do not pass it into the filtered contacts array
     return false;
   });
+  console.log(contacts);
 }
 
 displayContacts(contacts);

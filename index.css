@@ -12,6 +12,7 @@ h1 {
   background-color: rgb(220, 220, 220);
   height: 60px;
   border: 3px solid rgb(119, 136, 153);
+  font-family: sans-serif;
 }
 
 #new-contact-form {
