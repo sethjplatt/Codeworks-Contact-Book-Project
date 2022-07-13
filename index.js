@@ -2,7 +2,7 @@
  for global variables use 'var' to delcare them, also move them to the top of your program- its just better practice - teas
  --------delete me----------------------------*/
 
-var count = 3;
+var count = 2;
 
 
 /*------------------------------------------------------------------------------------------------------------------
@@ -138,6 +138,7 @@ function displayContacts(contacts) {
 function deleteContact(id) {
   contacts = contacts.filter(function (contact) {
     //if a contact object's id is not equal to the passed in id, keep it in the contacts array
+    console.log(id)
     if (contact.id !== id) {
       return true;
     }
@@ -146,8 +147,6 @@ function deleteContact(id) {
     I added count-- here because your count would be off if you added another contact after deleting one 
     ----------------delete me------------------*/
     count--;
-//    contacts.splice(id-1,1)
-
     return false;
   });
 }
