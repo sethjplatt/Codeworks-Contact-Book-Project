@@ -20,13 +20,6 @@ let contacts = [
     address: "10 Lake Rd",
     id: "1",
   },
-  {
-    firstName: "Dave",
-    lastName: "Wall",
-    phoneNumber: "5128830912",
-    address: "98 West ave",
-    id: "2",
-  },
 ];
 
 /*
@@ -111,9 +104,9 @@ function displayContacts(contacts) {
 
     //on click, html element removed and contact list element removed from contact array with deleteContact function
     deleteButton.addEventListener("click", function () {
-      wrapper.remove();
       console.log(deleteButton.id);
       deleteContact(deleteButton.id);
+      wrapper.remove();
     });
   });
 
@@ -128,7 +121,7 @@ function deleteContact(id) {
   contacts = contacts.filter(function (contact) {
     //if a contact object's id is not equal to the passed in id, keep it in the contacts array
     console.log(id);
-    if (contact.id !== id) {
+    if (parseInt(contact.id) !== parseInt(id)) {
       return true;
     }
     //if a contact object's id is equal to the passed in id, do not pass it into the filtered contacts array
