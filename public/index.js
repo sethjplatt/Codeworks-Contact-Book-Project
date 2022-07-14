@@ -35,6 +35,9 @@ let contacts = [
   },
 ];
 
+function resetForm() {
+  $(".input-box").val("");
+}
 /*
   This function creates a contact object
   The object is then pushed into our "database" contacts array. Values retrieved from HTML form.
@@ -58,6 +61,7 @@ function addContact(firstName, lastName, phoneNumber, address) {
     alert("Please Enter All Contact Information To Add A Contact");
   } else {
     contacts.push(newContact);
+    resetForm();
     //clear called so that each contact list element is displayed only once upon new contacts being added
     clear();
     //when new contact is added, display updated contact list
