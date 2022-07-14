@@ -3,7 +3,7 @@ Count global variable used to assign unique id's to each contact
 These id's are what we will reference to delete a contact
 */
 
-var count = 3;
+let count = 3;
 
 /*
 Array that holds all contacts. 
@@ -17,21 +17,21 @@ let contacts = [
     lastName: "Platt",
     phoneNumber: "4258306261",
     address: "600 S 1st St",
-    id: "0",
+    id: 0,
   },
   {
     firstName: "Paul",
     lastName: "Jones",
     phoneNumber: "2065415602",
     address: "10 Lake Rd",
-    id: "1",
+    id: 1,
   },
   {
     firstName: "James",
     lastName: "Stevens",
     phoneNumber: "8180981265",
     address: "988 Willow Blvd",
-    id: "2",
+    id: 2,
   },
 ];
 
@@ -45,9 +45,9 @@ function addContact(firstName, lastName, phoneNumber, address) {
     lastName: document.getElementById("last-name").value,
     phoneNumber: document.getElementById("phone-number").value,
     address: document.getElementById("address").value,
-    //each new contact is given an incremented unique id
-    id: count++,
+    id: count,
   };
+  count++;
   //form validation to ensure every contact has a first name, last name, phone number, and address
   if (
     newContact.firstName === "" ||
@@ -78,9 +78,9 @@ the current search input is checked against all contacts first name, last name, 
 searchInput.addEventListener("input", function (event) {
   //tutorial citation https://www.youtube.com/watch?v=wxz5vJ1BWrc&t=591s to get current input value
   let currentSearch = event.target.value.toLowerCase();
-    //any contact list element that matches the current input will be returned in the new filteredContacts array. Case insensitive
+  //any contact list element that matches the current input will be returned in the new filteredContacts array. Case insensitive
   let filteredContacts = contacts.filter((contact) => {
-// check all input values against first name, last name, phone number, address
+    // check all input values against first name, last name, phone number, address
     return (
       contact.firstName.toLowerCase().includes(currentSearch) ||
       contact.lastName.toLowerCase().includes(currentSearch) ||
