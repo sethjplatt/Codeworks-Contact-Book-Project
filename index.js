@@ -75,8 +75,9 @@ let searchInput = document.getElementById("search-bar");
 when any key is typed into or deleted from search-bar
 the current search input is checked against all contacts first name, last name, phone number, and address
 */
-searchInput.addEventListener("input", function (input) {
-  let currentSearch = input.target.value.toLowerCase();
+searchInput.addEventListener("input", function (event) {
+  //tutorial citation https://www.youtube.com/watch?v=wxz5vJ1BWrc&t=591s to get current input value
+  let currentSearch = event.target.value.toLowerCase();
   let filteredContacts = contacts.filter((contact) => {
     //any contact list element that matches the current input will be returned in the new filteredContacts array. Case insensitive
     return (
@@ -144,7 +145,7 @@ function displayContacts(contacts) {
 function deleteContact(id) {
   contacts = contacts.filter(function (contact) {
     //if a contact object's id is not equal to the passed in delete button id, keep it in the contacts array
-    if (parseInt(contact.id) !== parseInt(id)) {
+    if (contact.id != parseInt(id)) {
       return true;
     }
     //if a contact object's id is equal to the passed in delete button id, do not pass it into the filtered contacts array
