@@ -41,10 +41,10 @@ let contacts = [
   */
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
-    firstName: document.getElementById("first-name").value,
-    lastName: document.getElementById("last-name").value,
-    phoneNumber: document.getElementById("phone-number").value,
-    address: document.getElementById("address").value,
+    firstName: $("#first-name").val(),
+    lastName: $("#last-name").val(),
+    phoneNumber: $("#phone-number").val(),
+    address: $("#address").val(),
     id: count,
   };
   count++;
@@ -67,15 +67,14 @@ function addContact(firstName, lastName, phoneNumber, address) {
 
 //clears all contact list elements on the HTML file
 function clear() {
-  document.getElementById("contacts-container").innerHTML = "";
+  $("#contacts-container").html("");
 }
 
-let searchInput = document.getElementById("search-bar");
 /*
   when any key is typed into or deleted from search-bar
   the current search input is checked against all contacts first name, last name, phone number, and address
   */
-searchInput.addEventListener("input", function (event) {
+$("#search-bar").on("input", function (event) {
   //tutorial citation https://www.youtube.com/watch?v=wxz5vJ1BWrc&t=591s to get current input value
   let currentSearch = event.target.value.toLowerCase();
   //any contact list element that matches the current input will be returned in the new filteredContacts array. Case insensitive
@@ -100,34 +99,31 @@ function displayContacts(contacts) {
   //for each contact object in the contacts array, create a new contact list element.
   let contactListElm = contacts.map(function (contact) {
     //within each new contact list item, create multiple HTML elements for the corresponding contact object key value pairs
-    let wrapper = document.createElement("li");
-    let firstName = document.createElement("span");
-    let lastName = document.createElement("span");
-    let phoneNumber = document.createElement("span");
-    let address = document.createElement("span");
-    let deleteButton = document.createElement("button");
+    let wrapper = $("<li></li>").addClass("contact");
+    let firstName = $("span").addClass("first-name");
+    let lastName = $("span").addClass("last-name");
+    let phoneNumber = $("span").addClass("phone-number");
+    let address = $("span").addClass("address");
+    let deleteButton = $("button").attr("id", `${contact.id}`);
 
     //give html elements classes, text content, and id's as fit.
-    wrapper.className = "contact";
     firstName.innerHTML = contact.firstName;
-    firstName.className = "first-name";
     lastName.innerHTML = contact.lastName;
-    lastName.className = "last-name";
     phoneNumber.innerHTML = contact.phoneNumber;
-    phoneNumber.className = "phone-number";
     address.innerHTML = contact.address;
-    address.className = "address";
     deleteButton.innerHTML = "Delete";
     //each delete button given id corresponding to its contact id. Will allow us to delete specific contact from contacts array onclick.
-    deleteButton.id = `${contact.id}`;
 
     //append all html elements
-    wrapper.appendChild(firstName);
-    wrapper.appendChild(lastName);
-    wrapper.appendChild(phoneNumber);
-    wrapper.appendChild(address);
-    wrapper.appendChild(deleteButton);
-    contactsElms.appendChild(wrapper);
+
+    $("contactsElms").append([
+      wrapper,
+      firstName,
+      lastName,
+      phoneNumber,
+      address,
+      deleteButton,
+    ]);
 
     //on click, contact list item element removed from html and contact object removed from contact array with deleteContact function
     deleteButton.addEventListener("click", function () {
@@ -137,9 +133,7 @@ function displayContacts(contacts) {
   });
 
   // place all contacts elements under the HTML contacts-container div
-  return document
-    .getElementById("contacts-container")
-    .appendChild(contactsElms);
+  return $("contacts-container").append("contactsElms");
 }
 
 //for all contacts, check if a contact object's id is equal to the passed in delete button id
