@@ -78,8 +78,9 @@ the current search input is checked against all contacts first name, last name, 
 searchInput.addEventListener("input", function (event) {
   //tutorial citation https://www.youtube.com/watch?v=wxz5vJ1BWrc&t=591s to get current input value
   let currentSearch = event.target.value.toLowerCase();
-  let filteredContacts = contacts.filter((contact) => {
     //any contact list element that matches the current input will be returned in the new filteredContacts array. Case insensitive
+  let filteredContacts = contacts.filter((contact) => {
+// check all input values against first name, last name, phone number, address
     return (
       contact.firstName.toLowerCase().includes(currentSearch) ||
       contact.lastName.toLowerCase().includes(currentSearch) ||
