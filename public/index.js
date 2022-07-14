@@ -95,50 +95,39 @@ $("#search-bar").on("input", function (event) {
 //creates html elements from contacts "database" array of objects
 function displayContacts(contacts) {
   //create unordered list to store contact list elements in
-  let contactsElms = document.createElement("ul");
+  let contactsElms = $("<ul></ul>");
   //for each contact object in the contacts array, create a new contact list element.
   let contactListElm = contacts.map(function (contact) {
     //within each new contact list item, create multiple HTML elements for the corresponding contact object key value pairs
     let wrapper = $("<li></li>").addClass("contact");
-    let firstName = document.createElement("span");
-    let lastName = document.createElement("span");
-    let phoneNumber = document.createElement("span");
-    let address = document.createElement("span");
+    let firstName = $("<span></span>")
+      .addClass("first-name")
+      .html(contact.firstName);
+    let lastName = $("<span></span>")
+      .addClass("last-name")
+      .html(contact.lastName);
+    let phoneNumber = $("<span></span>")
+      .addClass("phone-number")
+      .html(contact.phoneNumber);
+    let address = $("<span></span>").addClass("address").html(contact.address);
     let deleteButton = document.createElement("button");
-
-    //give html elements classes, text content, and id's as fit.
-
-    firstName.innerHTML = contact.firstName;
-    firstName.className = "first-name";
-    lastName.innerHTML = contact.lastName;
-    lastName.className = "last-name";
-    phoneNumber.innerHTML = contact.phoneNumber;
-    phoneNumber.className = "phone-number";
-    address.innerHTML = contact.address;
-    address.className = "address";
     deleteButton.innerHTML = "Delete";
     //each delete button given id corresponding to its contact id. Will allow us to delete specific contact from contacts array onclick.
     deleteButton.id = `${contact.id}`;
 
     //append all html elements
-    wrapper.append(firstName);
-    wrapper.append(lastName);
-    wrapper.append(phoneNumber);
-    wrapper.append(address);
-    wrapper.append(deleteButton);
+    wrapper.append(firstName, lastName, phoneNumber, address, deleteButton);
     contactsElms.append(wrapper);
 
     //on click, contact list item element removed from html and contact object removed from contact array with deleteContact function
-    $("deleteButton").on("click", function () {
+    deleteButton.addEventListener("click", function () {
       deleteContact(deleteButton.id);
       wrapper.remove();
     });
   });
 
   // place all contacts elements under the HTML contacts-container div
-  return document
-    .getElementById("contacts-container")
-    .appendChild(contactsElms);
+  return $("#contacts-container").append(contactsElms);
 }
 
 //for all contacts, check if a contact object's id is equal to the passed in delete button id
