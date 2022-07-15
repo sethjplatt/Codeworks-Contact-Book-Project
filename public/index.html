@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seth Platt's Contact Book</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <h1 id="title"></h1>
@@ -37,9 +42,7 @@
       class="input-box"
       placeholder="Enter Address"
     />
-    <button type="button" id="add-button" onclick="addContact()">
-      Add Contact
-    </button>
+    <div id="add-button" onclick="addContact()">Add Contact</div>
 
     <div class="table-container">
       <div class="row-item">
@@ -47,7 +50,9 @@
         <div class="header col-item last-name">Last</div>
         <div class="header col-item phone-number">Phone</div>
         <div class="header col-item address">Address</div>
-        <div class="header col-item delete-label"></div>
+        <div class="header col-item delete-button">
+          <i class="fa-solid fa-circle-minus"></i>
+        </div>
       </div>
       <div class="container" id="contacts-container"></div>
     </div>

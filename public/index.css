@@ -2,17 +2,18 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin: auto;
-  background-color: ;
 }
 
 h1 {
   color: rgb(119, 136, 153);
+  display: flexbox;
+  margin: auto;
   text-align: center;
   padding-top: 30px;
   background-color: rgb(220, 220, 220);
   height: 60px;
-  border: 3px solid rgb(119, 136, 153);
   font-family: sans-serif;
+  max-width: 80%;
 }
 
 #new-contact-form {
@@ -49,6 +50,7 @@ h1 {
 .table-container {
   font-size: 20px;
   width: 80%;
+  margin: auto;
 }
 
 .row-item {
@@ -91,7 +93,7 @@ h1 {
 }
 
 .delete-button {
-  flex-basis: 12%;
+  flex-basis: 5%;
   text-align: center;
   cursor: pointer;
 }
@@ -100,6 +102,5 @@ h1 {
   flex-basis: 5%;
 }
 
-.add-button {
-  display: block;
+#add-button {
 }

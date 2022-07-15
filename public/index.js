@@ -121,11 +121,11 @@ function displayContacts(contacts) {
       .addClass("address")
       .addClass("col-item")
       .html(contact.address);
-    let deleteButton = document.createElement("button");
-    deleteButton.innerHTML = "Delete";
+    let deleteButton = document.createElement("div");
+    deleteButton.innerHTML = "X";
     //each delete button given id corresponding to its contact id. Will allow us to delete specific contact from contacts array onclick.
     deleteButton.id = `${contact.id}`;
-    deleteButton.className = "delete-button";
+    deleteButton.className = "delete-button col-item";
 
     //append all html elements
     wrapper.append(firstName, lastName, phoneNumber, address, deleteButton);
