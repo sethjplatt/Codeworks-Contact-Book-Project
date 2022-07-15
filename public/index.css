@@ -17,22 +17,12 @@ body {
   height: 150px;
 }
 
-#new-contact-form {
-  display: flex;
-  margin: auto;
-}
-
-#search-label {
-  display: block;
-  text-align: center;
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
 #search-bar {
   display: flex;
   margin: auto;
   width: 300px;
+  height: 25px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
@@ -105,14 +95,15 @@ input[type="text"] {
   margin-left: 43px;
 }
 
+.delete-label {
+  flex-basis: 5%;
+  cursor: text;
+}
+
 .delete-button {
   flex-basis: 5%;
   text-align: center;
   cursor: pointer;
-}
-
-.delete-label {
-  flex-basis: 5%;
 }
 
 #add-button {
