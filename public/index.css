@@ -116,7 +116,7 @@ input[type="text"] {
 }
 
 #add-button {
-  display: flexbox;
+  display: block;
   background-color: rgba(79, 71, 71, 0.5);
   color: #ebebde;
   width: 120px;
