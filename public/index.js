@@ -1,15 +1,13 @@
 /*
-  Count variable used to assign unique id's to each contact
-  These id's are what we will reference to delete a contact
-  */
-
+Count variable used to assign unique id's to each contact
+These id's are what we will reference to delete a contact
+*/
 let count = 3;
 
 /*
-  Array that holds all contacts. 
-  It acts as a searchable database we can later add contacts to and delete contacts from.
-  */
-
+Array that holds all contacts. 
+It acts as a searchable database we can later add contacts to and delete contacts from.
+*/
 let contacts = [
   //gave contacts array a few default contacts
   {
@@ -39,11 +37,11 @@ let contacts = [
 function resetForm() {
   $(".input-box").val("");
 }
-/*
-  This function creates a contact object
-  The object is then pushed into our "database" contacts array. Values retrieved from HTML form.
-  */
 
+/*
+This function creates a contact object
+The object is then pushed into our "database" contacts array. Values retrieved from HTML form.
+*/
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
     firstName: $("#first-name").val(),
@@ -63,6 +61,7 @@ function addContact(firstName, lastName, phoneNumber, address) {
     alert("Please Enter All Contact Information To Add A Contact");
   } else {
     contacts.push(newContact);
+    //form fields are reset
     resetForm();
     //clear called so that each contact list element is displayed only once upon new contacts being added
     clear();
@@ -77,9 +76,9 @@ function clear() {
 }
 
 /*
-  when any key is typed into or deleted from search-bar
-  the current search input is checked against all contacts first name, last name, phone number, and address
-  */
+when any key is typed into or deleted from search-bar
+the current search input is checked against all contacts first name, last name, phone number, and address
+*/
 $("#search-bar").on("input", function (event) {
   //tutorial citation https://www.youtube.com/watch?v=wxz5vJ1BWrc&t=591s to get current input value
   let currentSearch = event.target.value.toLowerCase();
@@ -93,6 +92,7 @@ $("#search-bar").on("input", function (event) {
       contact.address.toLowerCase().includes(currentSearch)
     );
   });
+  //clear called so that contact list is displayed only once on page
   clear();
   //any contact that includes the current search input will be displayed
   displayContacts(filteredContacts);
@@ -102,7 +102,7 @@ $("#search-bar").on("input", function (event) {
 function displayContacts(contacts) {
   //create unordered list to store contact list elements in
   let contactsElms = $("<ul></ul>");
-  //for each contact object in the contacts array, create a new contact list element.
+  //loop through each contact object in the contacts array
   let contactListElm = contacts.map(function (contact) {
     //within each new contact list item, create multiple HTML elements for the corresponding contact object key value pairs
     let wrapper = $("<li></li>").addClass("contact").addClass("row-item");
