@@ -43,6 +43,7 @@ function resetForm() {
   This function creates a contact object
   The object is then pushed into our "database" contacts array. Values retrieved from HTML form.
   */
+
 function addContact(firstName, lastName, phoneNumber, address) {
   let newContact = {
     firstName: $("#first-name").val(),
@@ -121,18 +122,18 @@ function displayContacts(contacts) {
       .addClass("address")
       .addClass("col-item")
       .html(contact.address);
-    let deleteButton = document.createElement("div");
-    deleteButton.innerHTML = "X";
+    let deleteButton = $("<div></div>")
+      .html("X")
+      .attr("id", `${contact.id}`)
+      .addClass("delete-button col-item");
     //each delete button given id corresponding to its contact id. Will allow us to delete specific contact from contacts array onclick.
-    deleteButton.id = `${contact.id}`;
-    deleteButton.className = "delete-button col-item";
 
     //append all html elements
     wrapper.append(firstName, lastName, phoneNumber, address, deleteButton);
     contactsElms.append(wrapper);
 
     //on click, contact list item element removed from html and contact object removed from contact array with deleteContact function
-    deleteButton.addEventListener("click", function () {
+    deleteButton.on("click", function () {
       deleteContact(deleteButton.id);
       wrapper.remove();
     });
@@ -156,8 +157,3 @@ function deleteContact(id) {
 
 //display default contacts upon opening html file in browser
 displayContacts(contacts);
-
-//standard javascript api advantage wouldnt have to load a large external file
-//jquery to put text within HTML elements
-$("h1").text("Contact Book");
-$("#search-label").text("Search Contacts");
