@@ -1,19 +1,20 @@
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: auto;
+  background-color: #ebebde;
 }
 
-h1 {
-  color: rgb(119, 136, 153);
+#title {
+  color: #ebebde;
   display: flexbox;
   margin: auto;
   text-align: center;
-  padding-top: 30px;
-  background-color: rgb(220, 220, 220);
+  font-size: 80px;
+  background-color: #4f4747;
   height: 60px;
-  font-family: sans-serif;
+  font-weight: 400;
   max-width: 80%;
+  height: 150px;
 }
 
 #new-contact-form {
@@ -24,10 +25,11 @@ h1 {
 #search-label {
   display: block;
   text-align: center;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 #search-bar {
-  height: 15px;
   display: flex;
   margin: auto;
   width: 173px;
@@ -40,9 +42,19 @@ h1 {
   font-size: 25px;
 }
 
+input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+}
+
 .input-box {
   display: flex;
   margin: auto;
+  margin-top: 10px;
+  background-color: #ebebde;
+  margin-top: 5px;
   height: 25px;
   width: 300px;
 }
@@ -58,7 +70,8 @@ h1 {
 }
 
 .col-item {
-  background-color: rgba(95, 118, 148, 0.5);
+  background-color: rgba(119, 119, 100, 0.6);
+  color: #ebebde;
   margin: 3px;
   padding: 20px;
   white-space: nowrap;
@@ -84,7 +97,7 @@ h1 {
 
 .header {
   font-weight: bold;
-  background-color: rgb(95, 118, 148);
+  background-color: rgba(79, 71, 71, 0.9);
   font-size: 16px;
 }
 
@@ -103,4 +116,14 @@ h1 {
 }
 
 #add-button {
+  display: flexbox;
+  background-color: rgba(79, 71, 71, 0.5);
+  color: #ebebde;
+  width: 120px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
 }

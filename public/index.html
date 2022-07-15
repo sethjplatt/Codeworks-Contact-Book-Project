@@ -13,9 +13,8 @@
     />
   </head>
   <body>
-    <h1 id="title"></h1>
-    <label type="search-bar" id="search-label"></label>
-    <input type="text" id="search-bar" name="search-bar" />
+    <div id="title">Contact Book</div>
+    <br />
     <form id="new-contact-form" method="post">Add A New Contact</form>
     <input
       type="text"
@@ -42,8 +41,15 @@
       class="input-box"
       placeholder="Enter Address"
     />
+    <br />
     <div id="add-button" onclick="addContact()">Add Contact</div>
-
+    <br />
+    <input
+      type="text"
+      id="search-bar"
+      name="search-bar"
+      placeholder="Search Contacts"
+    />
     <div class="table-container">
       <div class="row-item">
         <div class="header col-item first-name" id="first-header">First</div>
