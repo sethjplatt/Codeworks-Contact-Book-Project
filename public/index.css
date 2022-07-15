@@ -1,8 +1,8 @@
 body {
-  padding-left: 15px;
-  width: 500px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  margin: auto;
+  background-color: ;
 }
 
 h1 {
@@ -16,73 +16,90 @@ h1 {
 }
 
 #new-contact-form {
-  margin-left: 50px;
+  display: flex;
+  margin: auto;
 }
 
 #search-label {
-  margin-left: 80px;
-  margin-bottom: 20px;
+  display: block;
+  text-align: center;
 }
 
 #search-bar {
   height: 15px;
-  margin-bottom: 20px;
+  display: flex;
+  margin: auto;
   width: 173px;
+  margin-bottom: 20px;
 }
 
 #new-contact-form {
-  margin-left: 80px;
+  display: block;
+  text-align: center;
   font-size: 25px;
 }
 
 .input-box {
-  display: block;
-  margin: 10px 80px;
+  display: flex;
+  margin: auto;
   height: 25px;
   width: 300px;
 }
 
-#add-button {
-  display: block;
-  margin-left: 80px;
+.table-container {
+  font-size: 20px;
+  width: 80%;
+}
+
+.row-item {
+  display: flex;
+}
+
+.col-item {
+  background-color: rgba(95, 118, 148, 0.5);
+  margin: 3px;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .first-name {
-  font-size: 30px;
-  margin: 20px 8px 10px 5px;
-  font-weight: bold;
-  color: rgb(119, 136, 153);
+  flex-basis: 20%;
 }
 
 .last-name {
-  font-size: 30px;
-  margin: 20px 0px;
-  font-weight: bold;
-  color: rgb(119, 136, 153);
+  flex-basis: 20%;
 }
 
 .phone-number {
-  display: block;
-  font-size: 15px;
-  margin: 10px 8px 5px 5px;
-  color: rgb(119, 136, 153);
+  flex-basis: 20%;
 }
 
 .address {
-  font-size: 15px;
-  margin: 5px 20px 5px 5px;
-  color: rgb(119, 136, 153);
+  flex-basis: 60%;
 }
 
-.contact {
-  background-color: rgb(220, 220, 220);
-  border: 3px solid rgb(119, 136, 153);
-  display: block;
-  margin-top: 10px;
-  width: 400px;
+.header {
+  font-weight: bold;
+  background-color: rgb(95, 118, 148);
+  font-size: 16px;
 }
 
-.button {
-  margin: 10px 0px 5px 340px;
+#first-header {
+  margin-left: 43px;
+}
+
+.delete-button {
+  flex-basis: 12%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.delete-label {
+  flex-basis: 5%;
+}
+
+.add-button {
   display: block;
 }

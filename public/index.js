@@ -35,6 +35,7 @@ let contacts = [
   },
 ];
 
+//all form input fields are cleared when a contact is added.
 function resetForm() {
   $(".input-box").val("");
 }
@@ -103,21 +104,28 @@ function displayContacts(contacts) {
   //for each contact object in the contacts array, create a new contact list element.
   let contactListElm = contacts.map(function (contact) {
     //within each new contact list item, create multiple HTML elements for the corresponding contact object key value pairs
-    let wrapper = $("<li></li>").addClass("contact");
+    let wrapper = $("<li></li>").addClass("contact").addClass("row-item");
     let firstName = $("<span></span>")
       .addClass("first-name")
+      .addClass("col-item")
       .html(contact.firstName);
     let lastName = $("<span></span>")
       .addClass("last-name")
+      .addClass("col-item")
       .html(contact.lastName);
     let phoneNumber = $("<span></span>")
       .addClass("phone-number")
+      .addClass("col-item")
       .html(contact.phoneNumber);
-    let address = $("<span></span>").addClass("address").html(contact.address);
+    let address = $("<span></span>")
+      .addClass("address")
+      .addClass("col-item")
+      .html(contact.address);
     let deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
     //each delete button given id corresponding to its contact id. Will allow us to delete specific contact from contacts array onclick.
     deleteButton.id = `${contact.id}`;
+    deleteButton.className = "delete-button";
 
     //append all html elements
     wrapper.append(firstName, lastName, phoneNumber, address, deleteButton);

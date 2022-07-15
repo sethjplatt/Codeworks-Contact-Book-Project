@@ -37,11 +37,21 @@
       class="input-box"
       placeholder="Enter Address"
     />
-    <button type="button" id="add-button" onclick="addContact()" type="reset">
+    <button type="button" id="add-button" onclick="addContact()">
       Add Contact
     </button>
 
-    <div id="contacts-container"></div>
+    <div class="table-container">
+      <div class="row-item">
+        <div class="header col-item first-name" id="first-header">First</div>
+        <div class="header col-item last-name">Last</div>
+        <div class="header col-item phone-number">Phone</div>
+        <div class="header col-item address">Address</div>
+        <div class="header col-item delete-label"></div>
+      </div>
+      <div class="container" id="contacts-container"></div>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
       integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
